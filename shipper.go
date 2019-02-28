@@ -23,7 +23,7 @@ func NewShipper(proto string, addr string) (*Shipper, error) {
 	return &Shipper{conn}, nil
 }
 
-// write to socket with exponential backoff in milliseconds
+// WriteWithBackoff writes to socket with exponential backoff in milliseconds
 func (s *Shipper) WriteWithBackoff(p []byte, initial int) {
 	var timeout time.Duration = time.Duration(initial) * time.Millisecond
 

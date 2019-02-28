@@ -72,7 +72,7 @@ func (r *Receiver) ListenToTail(t *tail.Tail) {
 	}
 }
 
-// write entries on messages channel to filename
+// WriteToFile writes entries on messages channel to filename
 func (r *Receiver) WriteToFile(filename string) {
 	file, err := os.OpenFile(filename, os.O_CREATE|os.O_WRONLY|os.O_TRUNC|os.O_APPEND, 0644)
 	if err != nil {

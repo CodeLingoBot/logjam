@@ -15,7 +15,7 @@ type Config struct {
 	Files          []string `json:"files"`       // files to include in publish
 }
 
-// read config file
+// ReadConfigFile reads config file
 func ReadConfigFile(path string) (*Config, error) {
 	file, err := ioutil.ReadFile(path)
 	if err != nil {
